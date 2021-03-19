@@ -49,7 +49,7 @@ class App extends React.Component {
     let tabChoice = <div />;
 
     /*Uncomment below to render assignments*/
-    /*if (this.state.buttonClicked === "assignments") {
+    if (this.state.buttonClicked === "assignments") {
       tabChoice = (
         <List
           placeholder="Add Assignment..."
@@ -58,66 +58,66 @@ class App extends React.Component {
           title="Assignments"
         />
       );
-    }*/
 
-    /* Change below to render students*/
 
-    /*if (this.state.buttonClicked === "students") {
-      tabChoice = (
-        <List
-          placeholder="Add Assignment..." 
-          currList={this.state.assignments}
-          addFunction={this.addAssignment}
-          title="Student Roster"
-        />
-      );
-    }*/
+      /* Change below to render students*/
 
-    /* Uncomment lines below to render grades*/
-    /*if (this.state.buttonClicked === "grades") {
-      tabChoice = (
-        <Table
-          tableNames={this.state.assignments}
-          rows={this.state.students}
-          addFunction={this.addGrade}
-          data={this.state.grades}
-        />
-      );
-    }*/
+      /*if (this.state.buttonClicked === "students") {
+        tabChoice = (
+          <List
+            placeholder="Add Assignment..." 
+            currList={this.state.assignments}
+            addFunction={this.addAssignment}
+            title="Student Roster"
+          />
+        );
+      }*/
 
-    return (
-      <div>
-        <div className="Box Box--spacious f4">
-          <div className="Box-header">
-            <h3 className="Box-title d-flex flex-justify-center">GradeBook</h3>
+      /* Uncomment lines below to render grades*/
+      /*if (this.state.buttonClicked === "grades") {
+        tabChoice = (
+          <Table
+            tableNames={this.state.assignments}
+            rows={this.state.students}
+            addFunction={this.addGrade}
+            data={this.state.grades}
+          />
+        );
+      }*/
+
+      return (
+        <div>
+          <div className="Box Box--spacious f4">
+            <div className="Box-header">
+              <h3 className="Box-title d-flex flex-justify-center">GradeBook</h3>
+            </div>
           </div>
+          <nav className="UnderlineNav d-flex flex-justify-center">
+            <div className="UnderlineNav-body pt-6">
+              <button
+                className="btn btn-primary"
+                onClick={() => this.handleButtonClicked("assignments")}
+              >
+                Assignments
+            </button>
+              <button
+                className="btn btn-primary"
+                onClick={() => this.handleButtonClicked("students")}
+              >
+                Students
+            </button>
+              <button
+                className="btn btn-primary"
+                onClick={() => this.handleButtonClicked("grades")}
+              >
+                Grades
+            </button>
+            </div>
+          </nav>
+          {tabChoice}
         </div>
-        <nav className="UnderlineNav d-flex flex-justify-center">
-          <div className="UnderlineNav-body pt-6">
-            <button
-              className="btn btn-primary"
-              onClick={() => this.handleButtonClicked("assignments")}
-            >
-              Assignments
-            </button>
-            <button
-              className="btn btn-primary"
-              onClick={() => this.handleButtonClicked("students")}
-            >
-              Students
-            </button>
-            <button
-              className="btn btn-primary"
-              onClick={() => this.handleButtonClicked("grades")}
-            >
-              Grades
-            </button>
-          </div>
-        </nav>
-        {tabChoice}
-      </div>
-    );
+      );
+    }
   }
-}
 
-export default App;
+  export default App;
